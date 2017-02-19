@@ -3,6 +3,7 @@
  */
 import Footer from './footer';
 import { pageInit } from './index';
+import '../styles/style.css';
 
 const Home = () => `
   <section class="home">
