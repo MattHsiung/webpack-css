@@ -1,0 +1,32 @@
+/* GLOBAL */
+body {
+    background: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%) no-repeat;
+    font-size: 4rem;
+    min-height: 100vh;
+    overflow: hidden;
+    text-align: center;
+    mix-blend-mode: overlay;
+    font-family: 'Lobster', cursive;
+}
+
+h1 {
+    border: 0.125em solid;
+    display: inline-block;
+    padding: 0.25em;
+}
+
+/* PAGE */
+.about h1 {
+    border-color: green;
+}
+.home h1 {
+    border-color: white;
+}
+
+/* SHARED */
+.footer > a {
+    text-decoration: none;
+}
+.footer > a:hover {
+    color: white;
+}
