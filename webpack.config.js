@@ -35,6 +35,12 @@ module.exports = {
     historyApiFallback: true,
 
   },
+  resolve: {
+
+    alias: {
+      'styles': path.resolve(__dirname, 'src/styles')
+    }
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src', 'index.html'),

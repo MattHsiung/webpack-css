@@ -1,6 +1,7 @@
 /**
  * Created by matt on 2/19/17.
  */
+import 'styles/footer.css';
 export default () => `
   <nav class="footer">
     <a href="/">home</a>
