@@ -45,15 +45,19 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src', 'index.html'),
       inject: 'body',
-      chunks: ['home'],
+      excludeChunks: ['about'],
       filename: 'index.html'
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src', 'index.html'),
       inject: 'body',
-      chunks: ['about'],
+      excludeChunks: ['home'],
       filename: 'about.html'
     }),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'common'
+    })
   ]
 };
