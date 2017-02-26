@@ -5,6 +5,10 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const ETP = require('extract-text-webpack-plugin');
+// const Uglify = require('uglifyjs-webpack-plugin');
+
+const isProduction = process.env.NODE_ENV === 'production';
+const processCss = isProduction ? '?minimize!postcss-loader' : '';
 
 module.exports = {
   context: path.join(__dirname, 'src'),
@@ -28,7 +32,7 @@ module.exports = {
         // loader: ETP.extract('style-loader', 'css-loader!sass-loader'),
         loader: ETP.extract({
           fallback: 'style-loader',
-          use: 'css-loader!postcss-loader!sass-loader'
+          use: `css-loader${processCss}!sass-loader`
         }),
         include: path.join(__dirname, 'src')
       },
@@ -72,10 +76,13 @@ module.exports = {
       name: 'common'
     }),
 
+    // new Uglify(),
+
     // new ETP('styles.css'),
     new ETP({
       filename: '[name].styles.css',
-      allChunks: true
+      allChunks: true,
+      disable: !isProduction
     }),
   ]
 };
