@@ -25,6 +25,11 @@ module.exports = {
         test: /\.css$/,
         loader: 'style-loader!css-loader',
         include: path.join(__dirname, 'src')
+      },
+      {
+        test: /\.(png|jpg)$/,
+        loader: 'file-loader',
+        include: path.join(__dirname, 'src')
       }
     ]
   },
