@@ -1,6 +1,6 @@
 /* GLOBAL */
 body {
-    background: url('../assets/miku.png'), linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%) no-repeat;
+    background: url('~images/miku.png'), linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%) no-repeat;
     font-size: 4rem;
     min-height: 100vh;
     overflow: hidden;
