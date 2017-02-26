@@ -4,6 +4,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const ETP = require('extract-text-webpack-plugin');
+
 module.exports = {
   context: path.join(__dirname, 'src'),
   entry: {
@@ -23,7 +25,11 @@ module.exports = {
       },
       {
         test: /\.(css|scss|sass)$/,
-        loader: 'style-loader!css-loader!sass-loader',
+        // loader: ETP.extract('style-loader', 'css-loader!sass-loader'),
+        loader: ETP.extract({
+          fallback: 'style-loader',
+          use: 'css-loader!sass-loader'
+        }),
         include: path.join(__dirname, 'src')
       },
       {
@@ -64,6 +70,12 @@ module.exports = {
 
     new webpack.optimize.CommonsChunkPlugin({
       name: 'common'
-    })
+    }),
+
+    // new ETP('styles.css'),
+    new ETP({
+      filename: '[name].styles.css',
+      allChunks: true
+    }),
   ]
 };
