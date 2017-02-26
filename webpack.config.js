@@ -28,7 +28,7 @@ module.exports = {
         // loader: ETP.extract('style-loader', 'css-loader!sass-loader'),
         loader: ETP.extract({
           fallback: 'style-loader',
-          use: 'css-loader!sass-loader'
+          use: 'css-loader!postcss-loader!sass-loader'
         }),
         include: path.join(__dirname, 'src')
       },
