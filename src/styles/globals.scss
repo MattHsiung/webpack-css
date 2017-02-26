@@ -1,6 +1,7 @@
+@import "colors";
 /* GLOBAL */
 body {
-    background: url('~images/miku.png'), linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%) no-repeat;
+    background: url('~images/miku.png'), linear-gradient(to top, $color1 0%, $color2 100%) no-repeat;
     font-size: 4rem;
     min-height: 100vh;
     overflow: hidden;

@@ -3,7 +3,7 @@
  */
 import Footer from './footer';
 import { pageInit } from './index';
-import 'styles/globals.css';
+import 'styles/globals.scss';
 import 'styles/about.css';
 
 const About = () => `
